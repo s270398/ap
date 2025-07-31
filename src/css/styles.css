@@ -1,0 +1,99 @@
+/* Ensure the body and html take full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full height for body and html */
+  overflow: hidden; /* Prevent scrollbars */
+  background-color: #000; /* Black background for the page */
+  display: flex;
+  justify-content: center; /* Center everything horizontally */
+  align-items: center; /* Center everything vertically */
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Make sure canvas occupies full screen */
+#three-canvas {
+  position: fixed; /* Fix canvas to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;   /* Full viewport width */
+  height: 100vh;  /* Full viewport height */
+  display: block; /* Prevent unwanted space below the canvas */
+  z-index: -1;    /* Ensure canvas is behind other UI elements */
+}
+
+/* Ensure popup and other UI elements do not affect canvas positioning */
+#popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000;
+  background: #fff; /* Dark background with transparency */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000; /* Popup should be on top of everything */
+}
+
+#popupMessage {
+  text-align: center;
+  color: #000;
+}
+
+/* Styling for the logout button on top of the canvas */
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #464545;
+  color: white;
+  font-size: 16px;
+  font-family: 'Source Code Pro', monospace;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure logout button is on top of the canvas */
+}
+
+/* Styling for text and emoji (Used in password page as well) */
+p, .emoji {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: 'Source Code Pro', monospace;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* Styling for input and buttons in both pages */
+input.pwinput, button.loginbutton {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+input.pwinput {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;  /* Limit the width of the input field */
+}
+
+button.loginbutton {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #464545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100px; /* Limit button width */
+}
+
+/* Add a hover effect to the login button */
+button.loginbutton:hover {
+  background-color: #575757;
+}
